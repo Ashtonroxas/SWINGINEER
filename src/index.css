@@ -2,63 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Expense Tracker Design System */
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
 
 @layer base {
-  :root {
-    /* Base colors - modern financial app palette */
+:root {
     --background: 248 250 252;
-    --foreground: 203 39% 15%;
+    --foreground: 15 23 42;
 
-    /* Card system */
-    --card: 0 0% 100%;
-    --card-foreground: 203 39% 15%;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 203 39% 15%;
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
 
-    /* Primary - Financial Blue */
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 217 91% 70%;
+    --primary: 139 92 246;
+    --primary-foreground: 249 250 251;
+    --primary-glow: 167 139 250;
 
-    /* Secondary - Success Green */
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 88 28 135;
+    --secondary-foreground: 249 250 251;
 
-    /* Muted tones */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
 
-    /* Accent - Vibrant Orange */
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 124 58 237;
+    --accent-foreground: 249 250 251;
 
-    /* Warning - Amber */
-    --warning: 43 96% 56%;
-    --warning-foreground: 222 84% 4.9%;
+    --success: 139 92 246;
+    --success-foreground: 249 250 251;
 
-    /* Destructive - Professional Red */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --warning: 245 158 11;
+    --warning-foreground: 254 252 232;
 
-    /* Borders and inputs */
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --destructive: 239 68 68;
+    --destructive-foreground: 254 242 242;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
-    --gradient-success: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
-    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 63%));
-    --gradient-background: linear-gradient(135deg, hsl(248 250 252), hsl(241 245 249));
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 139 92 246;
+
+    /* Golf-specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-card: linear-gradient(180deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--primary)));
 
     /* Shadows */
-    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.3);
-    --shadow-card: 0 4px 20px -2px hsl(220 14% 96% / 0.8);
-    --shadow-elevated: 0 20px 50px -12px hsl(217 91% 60% / 0.25);
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-large: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
-    --radius: 12px;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -78,37 +77,33 @@
   }
 
   .dark {
-    --background: 203 39% 8%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 203 39% 12%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 203 39% 12%;
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 203 39% 8%;
-    --primary-glow: 217 91% 70%;
+    --primary: 167 139 250;
+    --primary-foreground: 46 16 101;
 
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 203 39% 8%;
+    --secondary: 88 28 135;
+    --secondary-foreground: 237 233 254;
 
-    --muted: 203 39% 15%;
-    --muted-foreground: 220 9% 65%;
+    --muted: 88 28 135;
+    --muted-foreground: 196 181 253;
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 203 39% 8%;
+    --accent: 124 58 237;
+    --accent-foreground: 237 233 254;
 
-    --warning: 43 96% 56%;
-    --warning-foreground: 203 39% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 203 39% 8%;
-
-    --border: 203 39% 20%;
-    --input: 203 39% 20%;
-    --ring: 217 91% 60%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 167 139 250;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -126,45 +121,6 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 text-foreground min-h-screen;
-    background-attachment: fixed;
-  }
-
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .gradient-success {
-    background: var(--gradient-success);
-  }
-
-  .gradient-accent {
-    background: var(--gradient-accent);
-  }
-
-  .shadow-primary {
-    box-shadow: var(--shadow-primary);
-  }
-
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-
-  .shadow-elevated {
-    box-shadow: var(--shadow-elevated);
-  }
-}
-
-@layer components {
-  .expense-card {
-    @apply bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1;
-  }
-
-  .stat-card {
-    @apply bg-gradient-to-br from-card to-muted/50 border border-border rounded-xl p-6 shadow-card hover:shadow-primary transition-all duration-300;
-  }
-
-  .form-card {
-    @apply bg-card/80 backdrop-blur-sm border border-border rounded-xl p-6 shadow-card;
+    @apply bg-background text-foreground;
   }
 }
